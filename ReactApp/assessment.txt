@@ -3,3 +3,9 @@ React renders the dom by using virtual DOM and diffing algorithm. Virtual DOM is
 Every time a component is rendered, it is added to virtual DOM. Any updates to state will reflect in the virtual DOM.
 The diffing algorithm then comes in to compare old Virtual DOM vs new updated Virtual DOM. Only changes that are needed to show are the ones
 that the actual DOM is updated with from the Virtual DOM.
+
+
+//10.//10. explain how virtual dom works and how it is coupled with state updates and state update API's
+
+I explained Virtual DOM above. With state updates and state update APIs these are what trigger the comparing process of virtual DOM. 
+setState and useState work in combination to update the state of components thus having the Virtual DOM use diffing algorithm to only update elements that were changed.
