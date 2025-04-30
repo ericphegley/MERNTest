@@ -17,8 +17,8 @@
     "for",
     "Node.js"
   ],
-  "author": "sit",
-  "license": "MIT",
+  "author": "eric",
+  "license": "na",
   "dependencies": {
     "express": "^5.1.0"
   },

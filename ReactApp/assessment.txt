@@ -1,0 +1,5 @@
+///6. how react renders dom in conservative manner - explain
+React renders the dom by using virtual DOM and diffing algorithm. Virtual DOM is just a representation of the actual DOM.
+Every time a component is rendered, it is added to virtual DOM. Any updates to state will reflect in the virtual DOM.
+The diffing algorithm then comes in to compare old Virtual DOM vs new updated Virtual DOM. Only changes that are needed to show are the ones
+that the actual DOM is updated with from the Virtual DOM.

@@ -1,0 +1,6 @@
+1. Statelessness is the having of no state to keep track of data. Nothing is remembered or stored in a state. For example data in requests do not depend
+on data from other requests because that other data is not remembered.
+Http is Hypertext Transfer Protocol. It is how web servers talk to each other. Clients send requests in the from of POST, GET, PUT, DELETE, and servers give a response to it.
+REST is the usage of these 4 methods I just mentioned. REST Api is also stateless.
+SPA is single-page-application. Instead of linking to different web pages, in these applications components are used which render in and out to update the SINGLE page.
+Classical applications reload the whole page when changes happen. SPA used virtual dom and diffing algorithm to determine only what has changed to rerender.

@@ -1,18 +1,33 @@
 let express = require('express')
-const app = express() //when we invoke it creates an express application which helps to build a web server
-
-const defaultRoute = require("./route/defaultRoute")
-const deafultApp = express();
-
-globalThis.rootPath = __dirname
-
-//setting up the middleware static to handle all the static files we need to serve to client
-// serve static files like images css using static middleware 
-app.use('/static', express.static('public')) //localhost:9000/static/alert_info.js
-
-app.use("/", deafultApp) //=>  app.use("/student", studentApp) 
-deafultApp.use("/",defaultRoute) //redirecting all requests to default route to get served
+const app = express()
+const router = express.Router();
+const fs = require('fs')
 
 
-console.log("Rest API is listening at 9000")
+app.get('/', (req, res) => {
+    res.send('Express setup here');
+  });
+
+app.get('/endpoint', (req, res) => {
+    res.send('Endpoint here');
+});
+
+app.get('/createUser', (req, res) => {
+    const { name, session, address, age } = req.query;
+
+    const userInfo = { name, session, address, age};
+    fs.writeFile('userInfo.json', JSON.stringify(userInfo, null, 2), (err) => {
+        if(err){
+            return res.status(500)
+        }
+    })
+    res.json({
+        name: name,
+        session: session,
+        address: address,
+        age: age
+    })
+});
+
+
 app.listen(9000)
